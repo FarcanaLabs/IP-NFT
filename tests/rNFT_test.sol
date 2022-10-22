@@ -10,7 +10,7 @@ import "remix_tests.sol";
 // But it will work fine in 'Solidity Unit Testing' plugin
 import "remix_accounts.sol";
 // <import file to test>
-import "../ipnft-farcana-labs.sol";
+import "../rNFT-farcana-labs.sol";
 
 
 string  constant agreement        = "Agrreement";
@@ -23,7 +23,7 @@ uint256 constant amount           = 1000;
 uint256 constant fixFarcaLabsShare= 100;
 address constant sci_wallet       = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
 
-contract ipnft_test is IPNFT_farcanaLabs(agreement, projectName, symbol, URI, unixTimeDeadline, coinsCount, amount, fixFarcaLabsShare, sci_wallet) {
+contract ipnft_test is rNFT_farcanaLabs(agreement, projectName, symbol, URI, unixTimeDeadline, coinsCount, amount, fixFarcaLabsShare, sci_wallet) {
 
     event StringFailure(string stringFailure);
 

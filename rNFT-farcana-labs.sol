@@ -5,8 +5,8 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.8
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.8/contracts/access/Ownable.sol";
 import "./Common/common_contract.sol";
 
-contract IPNFT_farcanaLabs is ERC721, Ownable, CommonContract{
-    address payable private ipnftWallet;
+contract rNFT_farcanaLabs is ERC721, Ownable, CommonContract{
+    address payable private rNFTwallet;
     uint256 public currentTokensCount;
     
     event eMint(address indexed user, uint256 tokenId);
@@ -36,7 +36,7 @@ contract IPNFT_farcanaLabs is ERC721, Ownable, CommonContract{
         scientist.deadline = 1729553473; //after change
         uint256 coinsCount = 1000;
         uint256 amount = 1000; // wei
-        ipnftWallet = payable(msg.sender);
+        rNFTwallet = payable(msg.sender);
         setCoinBalance(coinsCount, amount);
         farcanaLabsTake(100);
         registeredUsers[scientist.wallet].isMinted = true;
@@ -56,7 +56,7 @@ contract IPNFT_farcanaLabs is ERC721, Ownable, CommonContract{
             registeredUsers[msg.sender].isMinted = true; 
             mint(msg.sender);
         }
-        ipnftWallet.transfer(msg.value);
+        rNFTwallet.transfer(msg.value);
     }
 
     function addDevice(string memory deviceName, string memory secretKey) external onlyOwner returns(bytes32){
